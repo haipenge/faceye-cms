@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:cms 业务对像:PersonLabel 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- PersonLabel 管理 首页(列表页) -->
+	<definition name="cms.personLabel.manager" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.personLabel.center"></put-attribute>
+	</definition>
+	<definition name="cms.personLabel.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/personLabel/personLabel_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- PersonLabel 新增,编辑页面 -->
+	<definition name="cms.personLabel.update" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.personLabel.update.center"></put-attribute>
+	</definition>
+	<definition name="cms.personLabel.update.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/personLabel/personLabel_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- PersonLabel 明细页 -->
+	<definition name="cms.personLabel.detail" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.personLabel.detail.center"></put-attribute>
+	</definition>
+	<definition name="cms.personLabel.detail.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/personLabel/personLabel_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

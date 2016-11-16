@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:内容管理 - cms : 业务对像:内容 - Content,web tiles模板配置 -->
+    <!-- 作者:haipeng -->
+    <!-- 创建日期:2015-7-25 9:40:29 -->
+    
+    <definition name="default.cms.web"  template = "/component/cms/template/default.jsp">
+        <put-attribute name="default-header" value="/component/cms/template/default_header.jsp"></put-attribute>
+        <put-attribute name="default-center" value="/component/cms/template/default_center.jsp"></put-attribute>
+        <put-attribute name="default-footer" value="/component/cms/template/default_footer.jsp"></put-attribute>
+    </definition>
+   
+	<!-- 内容 : Content web 首页(列表页) -->
+	<definition name="cms.content.home" extends="default.cms.web">
+	    <put-attribute name="default-center" value="/component/cms/content/content_center.jsp"></put-attribute>
+	</definition>
+	<!-- 内容 新增,编辑页面 -->
+	<definition name="cms.content.update" extends="default.cms.web">
+	    <put-attribute name="default-center" value="/component/cms/content/content_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- 内容 明细页 -->
+	<definition name="cms.content.detail" extends="default.cms.web">
+	    <put-attribute name="default-center" value="/component/cms/content/content_detail.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

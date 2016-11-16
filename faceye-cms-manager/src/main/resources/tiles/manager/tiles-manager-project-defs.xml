@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:cms 业务对像:Project 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Project 管理 首页(列表页) -->
+	<definition name="cms.project.manager" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.project.center"></put-attribute>
+	</definition>
+	<definition name="cms.project.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/project/project_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Project 新增,编辑页面 -->
+	<definition name="cms.project.update" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.project.update.center"></put-attribute>
+	</definition>
+	<definition name="cms.project.update.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/project/project_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Project 明细页 -->
+	<definition name="cms.project.detail" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.project.detail.center"></put-attribute>
+	</definition>
+	<definition name="cms.project.detail.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/project/project_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

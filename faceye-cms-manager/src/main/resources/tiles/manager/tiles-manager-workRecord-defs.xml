@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- 模块:cms 业务对像:WorkRecord 管理后台 tiles模板配置 -->
+	<!-- 作者:haipege -->
+	<!-- WorkRecord 管理 首页(列表页) -->
+	<definition name="cms.workRecord.manager" extends="default.cms.manager">
+		<put-attribute name="default-center" value="cms.workRecord.center"></put-attribute>
+	</definition>
+	<definition name="cms.workRecord.center" extends="default.cms.center">
+		<put-attribute name="default-center-right"
+			value="/component/cms/workRecord/workRecord_center.jsp"></put-attribute>
+	</definition>
+
+	<!-- WorkRecord 新增,编辑页面 -->
+	<definition name="cms.workRecord.update" extends="default.cms.manager">
+		<put-attribute name="default-center" value="cms.workRecord.update.center"></put-attribute>
+	</definition>
+	<definition name="cms.workRecord.update.center" extends="default.cms.center">
+		<put-attribute name="default-center-right"
+			value="/component/cms/workRecord/workRecord_update.jsp"></put-attribute>
+	</definition>
+
+	<!-- WorkRecord 明细页 -->
+	<definition name="cms.workRecord.detail" extends="default.cms.manager">
+		<put-attribute name="default-center" value="cms.workRecord.detail.center"></put-attribute>
+	</definition>
+	<definition name="cms.workRecord.detail.center" extends="default.cms.center">
+		<put-attribute name="default-center-right"
+			value="/component/cms/workRecord/workRecord_detail.jsp"></put-attribute>
+	</definition>
+
+	<!-- 工作面板 -->
+	<definition name="cms.workRecord.panel" extends="default.cms.manager">
+		<put-attribute name="default-center" value="cms.workRecord.panel.center"></put-attribute>
+	</definition>
+	<definition name="cms.workRecord.panel.center" extends="default.cms.center">
+		<put-attribute name="default-center-right"
+			value="/component/cms/workRecord/workRecord_panel.jsp"></put-attribute>
+	</definition>
+
+
+</tiles-definitions>

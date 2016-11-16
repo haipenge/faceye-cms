@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:cms 业务对像:Team 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- Team 管理 首页(列表页) -->
+	<definition name="cms.team.manager" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.team.center"></put-attribute>
+	</definition>
+	<definition name="cms.team.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/team/team_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Team 新增,编辑页面 -->
+	<definition name="cms.team.update" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.team.update.center"></put-attribute>
+	</definition>
+	<definition name="cms.team.update.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/team/team_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- Team 明细页 -->
+	<definition name="cms.team.detail" extends="default.cms.manager">
+	    <put-attribute name="default-center" value="cms.team.detail.center"></put-attribute>
+	</definition>
+	<definition name="cms.team.detail.center" extends="default.cms.center">
+	    <put-attribute name="default-center-right" value="/component/cms/team/team_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>
