@@ -8,5 +8,5 @@
 		<li class="<%=JspUtil.isActive(request, "/cms/member")%>"><a href="<c:url value="/cms/member/home"/>"><fmt:message key="cms.member.manager"></fmt:message></a></li>
 		<li class="<%=JspUtil.isActive(request, "/cms/project")%>"><a href="<c:url value="/cms/project/home"/>"><fmt:message key="cms.project.manager"></fmt:message></a></li>
 		<li class="<%=JspUtil.isActive(request, "/cms/smtp")%>"><a href="<c:url value="/cms/smtp/home"/>"><fmt:message key="cms.smtp.manager"></fmt:message></a></li>
-		<li  class="<%=JspUtil.isActive(request, "personLabel")%>"><a  href="/cms/personLabel/home"><fmt:message key="cms.personLabel.manager"></fmt:message></a></li>
+		<li  class="<%=JspUtil.isActive(request, "/cms/personLabel")%>"><a  href="/cms/personLabel/home"><fmt:message key="cms.personLabel.manager"></fmt:message></a></li>
 	</ul></li>

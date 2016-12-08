@@ -118,7 +118,7 @@
 				<filtering>true</filtering>
 			</resource>
 			<resource>
-				<directory>../../faceye-security/faceye-security-manager-mongo/src/main/resources</directory>
+				<directory>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/resources</directory>
 				<includes>
 					<include>i18n/**</include>
 					<include>tiles/manager/*.*</include>
@@ -130,6 +130,7 @@
 				<directory>../../faceye-feature/src/main/resources</directory>
 				<includes>
 					<include>i18n/*</include>
+					<include>tiles/manager/*.*</include>
 				</includes>
 			</resource>
 			<resource>
@@ -160,7 +161,7 @@
 						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
 						<descriptor>src/main/webapp/WEB-INF/web.xml</descriptor>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-security/faceye-security-manager-mongo/src/main/webapp,../../faceye-feature/src/main/webapp,../../faceye-weixin/faceye-weixin-manager/src/main/webapp,../../faceye-questionnaire/faceye-questionnaire-manager/src/main/webapp</resourcesAsCSV>
+							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/webapp,../../faceye-feature/src/main/webapp,../../faceye-weixin/faceye-weixin-manager/src/main/webapp,../../faceye-questionnaire/faceye-questionnaire-manager/src/main/webapp</resourcesAsCSV>
 						</baseResource>
 					</webApp>
 				</configuration>
@@ -223,7 +224,7 @@
 						</goals>
 						<configuration>
 							<dest>target/classes/i18n</dest>
-							<src>../../faceye-security/faceye-security-entity-mongo/src/main/resources/i18n</src>
+							<src>../../faceye-security-manager-mongo/faceye-security-entity-mongo/src/main/resources/i18n</src>
 							<encoding>UTF-8</encoding>
 							<includes>
 								*.properties
@@ -238,7 +239,7 @@
 						</goals>
 						<configuration>
 							<dest>target/classes/i18n</dest>
-							<src>../../faceye-security/faceye-security-manager-mongo/src/main/resources/i18n</src>
+							<src>../../faceye-security-manager-mongo/faceye-security-manager-mongo/src/main/resources/i18n</src>
 							<encoding>UTF-8</encoding>
 							<includes>
 								*.properties

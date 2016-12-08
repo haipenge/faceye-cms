@@ -74,8 +74,8 @@
 	<!-- mvc:resources mapping="/css/**" location="/css/" / -->
 	<!-- 对静态资源文件的访问 -->
 	<!-- 对，a.jpg 会先找a.jpp Controller,找不到，才会转资源处理器，可能存在性能问题. -->
-	<mvc:view-controller path="/login" view-name="security.user.login" />
-	<mvc:view-controller path="/register" view-name="security.user.register" />
+	<mvc:view-controller path="/web/login" view-name="security.web.user.login" />
+	<mvc:view-controller path="/web/register" view-name="security.web.user.register" />
 	<mvc:default-servlet-handler />
 	<!-- 拦截器 -->
 	<mvc:interceptors>

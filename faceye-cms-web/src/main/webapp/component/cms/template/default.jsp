@@ -28,7 +28,7 @@ body {
 </style>
 </head>
 <%
-request.setAttribute("host", HostUtil.getHost());
+
 %>
 <body class="bg-gray">
 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">

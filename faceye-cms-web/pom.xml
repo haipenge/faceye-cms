@@ -89,7 +89,7 @@
 				<filtering>true</filtering>
 			</resource>
 			<resource>
-				<directory>../../faceye-security/faceye-security-web-manager-mongo/src/main/resources</directory>
+				<directory>../../faceye-security-web-mongo/faceye-security-web-manager-mongo/src/main/resources</directory>
 				<includes>
 					<include>tiles/*/*.*</include>
 					<include>conf/applicationContext-security.xml</include>
@@ -120,6 +120,7 @@
 				<directory>../../faceye-feature/src/main/resources</directory>
 				<includes>
 					<include>i18n/*</include>
+					<include>tiles/*/*.*</include>
 				</includes>
 			</resource>
 		</resources>
@@ -143,7 +144,7 @@
 						<defaultsDescriptor>src/main/resources/webdefault.xml</defaultsDescriptor>
 						<descriptor>src/main/webapp/WEB-INF/web.xml</descriptor>
 						<baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-feature/src/main/webapp,../../faceye-questionnaire/faceye-questionnaire-mobile/src/main/webapp</resourcesAsCSV>
+							<resourcesAsCSV>src/main/webapp,../../faceye-feature-mongo/src/main/webapp,../../faceye-feature/src/main/webapp,../../faceye-questionnaire/faceye-questionnaire-mobile/src/main/webapp,../../faceye-security-web-mongo/faceye-security-web-manager-mongo/src/main/webapp</resourcesAsCSV>
 						</baseResource>
 					</webApp>
 				</configuration>
@@ -222,6 +223,36 @@
 						<configuration>
 							<dest>target/classes/i18n</dest>
 							<src>../../faceye-questionnaire/faceye-questionnaire-mobile/src/main/resources/i18n</src>
+							<encoding>UTF-8</encoding>
+							<includes>
+								*.properties
+							</includes>
+						</configuration>
+					</execution>
+					<execution>
+						<id>native2ascii-utf8-security-web-entity-resources</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>native2ascii</goal>
+						</goals>
+						<configuration>
+							<dest>target/classes/i18n</dest>
+							<src>../../faceye-security-web-mongo/faceye-security-web-entity-mongo/src/main/resources/i18n</src>
+							<encoding>UTF-8</encoding>
+							<includes>
+								*.properties
+							</includes>
+						</configuration>
+					</execution>
+					<execution>
+						<id>native2ascii-utf8-security-web-manager-resources</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>native2ascii</goal>
+						</goals>
+						<configuration>
+							<dest>target/classes/i18n</dest>
+							<src>../../faceye-security-web-mongo/faceye-security-web-manager-mongo/src/main/resources/i18n</src>
 							<encoding>UTF-8</encoding>
 							<includes>
 								*.properties
@@ -333,7 +364,7 @@
 									<directory>../../faceye-weixin/faceye-weixin-manager/src/main/webapp</directory>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-web-manager/src/main/webapp</directory>
+									<directory>../../faceye-security-web-mongo/faceye-security-web-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-feature/src/main/webapp</directory>
@@ -382,7 +413,7 @@
 									<directory>../../faceye-weixin/faceye-weixin-manager/src/main/webapp</directory>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-web-manager/src/main/webapp</directory>
+									<directory>../../faceye-security-web-mongo/faceye-security-web-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-feature/src/main/webapp</directory>
@@ -433,7 +464,7 @@
 									<directory>../../faceye-weixin/faceye-weixin-manager/src/main/webapp</directory>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-web-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-web-mongo/faceye-security-web-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-feature/src/main/webapp</directory>
@@ -484,7 +515,7 @@
 									<directory>../../faceye-weixin/faceye-weixin-manager/src/main/webapp</directory>
 								</resource>
 								<resource>
-									<directory>../../faceye-security/faceye-security-web-manager-mongo/src/main/webapp</directory>
+									<directory>../../faceye-security-web-mongo/faceye-security-web-manager-mongo/src/main/webapp</directory>
 								</resource>
 								<resource>
 									<directory>../../faceye-feature/src/main/webapp</directory>
