@@ -56,7 +56,7 @@ public class Image implements Serializable {
 	private String url = "";
 
 	public String getUrl() {
-		String imgServer = BeanContextUtil.getInstance().getBean(PropertyService.class).get("image.server");
+		String imgServer = BeanContextUtil.getBean(PropertyService.class).get("image.server");
 		if (!StringUtils.startsWithIgnoreCase(url, "http://")) {
 			url = imgServer + url;
 		}
