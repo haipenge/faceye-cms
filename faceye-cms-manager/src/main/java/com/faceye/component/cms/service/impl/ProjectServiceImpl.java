@@ -34,7 +34,7 @@ public class ProjectServiceImpl extends BaseMongoServiceImpl<Project, Long, Proj
 	
 	
 	@Override
-	public Page<Project> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Project> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

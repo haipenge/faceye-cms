@@ -22,6 +22,7 @@
 					</div>
 				</div>
 				<ul class="cl-vnavigation">
+				    <c:import url="/component/core/template/manager/activity_default_center_left.jsp"/>
 					<c:import url="/component/core/template/manager/cms_default_center_left.jsp"/>
 					<c:import url="/component/core/template/manager/faceye-questionnaire_default_center_left.jsp"/>
 					<c:import url="/component/core/template/manager/weixin_default_center_left.jsp"/>

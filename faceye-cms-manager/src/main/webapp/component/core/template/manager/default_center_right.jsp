@@ -12,7 +12,10 @@
 		<div class="row">
 			<div class="panel panel-primary">
 				<div class="panel-body">
+				<!-- 
 					<a href="<c:url value="/cms/workRecord/panel"/>"><fmt:message key="cms.workRecord.panel"/></a>
+					 -->
+					 </a> <a class="btn btn-success btn-lg btn-block" target="_blank" href="<c:url value="/activity/luckItem/startActivity"/>">开始抽奖</a>
 				</div>
 			</div>
 		</div>

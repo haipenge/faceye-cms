@@ -29,7 +29,7 @@ public class SmtpServiceImpl extends BaseMongoServiceImpl<Smtp, Long, SmtpReposi
 	
 	
 	@Override
-	public Page<Smtp> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Smtp> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}

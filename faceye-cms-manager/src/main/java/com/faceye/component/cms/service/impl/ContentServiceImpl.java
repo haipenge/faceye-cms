@@ -78,7 +78,7 @@ public class ContentServiceImpl extends BaseMongoServiceImpl<Content, Long, Cont
 	 *         创建日期:2015-7-25 9:40:29<br>
 	 */
 	@Override
-	public Page<Content> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Content> getPage(Map<String, Object> searchParams, int page, int size)  {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -110,7 +110,7 @@ public class ContentServiceImpl extends BaseMongoServiceImpl<Content, Long, Cont
 	}
 
 	@Override
-	public void save(Content entity) {
+	public Content save(Content entity) {
 		String name = entity.getName();
 		if (StringUtils.isEmpty(entity.getKeywords())) {
 			entity.setKeywords(entity.getName());
@@ -153,6 +153,7 @@ public class ContentServiceImpl extends BaseMongoServiceImpl<Content, Long, Cont
 		if (account != null) {
 			this.push2Weixin(entity, account);
 		}
+		return entity;
 	}
 
 	@Override

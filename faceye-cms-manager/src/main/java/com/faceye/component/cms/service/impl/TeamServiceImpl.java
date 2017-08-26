@@ -34,7 +34,7 @@ public class TeamServiceImpl extends BaseMongoServiceImpl<Team, Long, TeamReposi
 	
 	
 	@Override
-	public Page<Team> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Team> getPage(Map<String, Object> searchParams, int page, int size) {
 		if (page != 0) {
 			page = page - 1;
 		}

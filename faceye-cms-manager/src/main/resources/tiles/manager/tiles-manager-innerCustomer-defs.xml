@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:activity 业务对像:InnerCustomer 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- InnerCustomer 管理 首页(列表页) -->
+	<definition name="activity.innerCustomer.manager" extends="default.manager">
+	    <put-attribute name="default-center" value="activity.innerCustomer.center"></put-attribute>
+	</definition>
+	<definition name="activity.innerCustomer.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/activity/innerCustomer/innerCustomer_center.jsp"></put-attribute>
+	</definition>
+	
+	<!-- InnerCustomer 新增,编辑页面 -->
+	<definition name="activity.innerCustomer.update" extends="default.manager">
+	    <put-attribute name="default-center" value="activity.innerCustomer.update.center"></put-attribute>
+	</definition>
+	<definition name="activity.innerCustomer.update.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/activity/innerCustomer/innerCustomer_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- InnerCustomer 明细页 -->
+	<definition name="activity.innerCustomer.detail" extends="default.manager">
+	    <put-attribute name="default-center" value="activity.innerCustomer.detail.center"></put-attribute>
+	</definition>
+	<definition name="activity.innerCustomer.detail.center" extends="default.center">
+	    <put-attribute name="default-center-right" value="/component/activity/innerCustomer/innerCustomer_detail.jsp"></put-attribute>
+	</definition>
+	
+</tiles-definitions>

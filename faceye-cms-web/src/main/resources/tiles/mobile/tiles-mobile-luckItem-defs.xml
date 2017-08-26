@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!-- 模块:activity 业务对像:LuckItem 管理后台 tiles模板配置 -->
+    <!-- 作者:haipege -->
+    <!-- LuckItem 管理 首页(列表页) -->
+	<definition name="activity.luckItem.mobile.home" extends="default.mobile">
+	    <put-attribute name="default-center" value="/component/activity/luckItem/luckItem_center.jsp"></put-attribute>
+	</definition>
+	<!-- LuckItem 新增,编辑页面 -->
+	<definition name="activity.luckItem.mobile.update" extends="default.simple">
+	     <put-attribute name="default-center" value="/component/activity/luckItem/luckItem_update.jsp"></put-attribute>
+	</definition>
+	
+	<!-- LuckItem 明细页 -->
+	<definition name="activity.luckItem.mobile.detail" extends="default.simple">
+	    <put-attribute name="default-center" value="/component/activity/luckItem/luckItem_detail.jsp"></put-attribute>
+	</definition>
+	
+	
+</tiles-definitions>
