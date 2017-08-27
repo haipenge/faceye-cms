@@ -2,8 +2,6 @@
 /*/*/.classpath
 /*/.project
 /*/src/main/resources/db/*
-/*/src/main/filters/dev.properties
-/*/src/template/project
 /*/.settings
 /*/target
 /*/bin
@@ -11,7 +9,6 @@
 /*/logs/*
 /*/data/*
 /*/db
-/*/build*.xm
 /*/*.rar
 /*/*.zip
 /*/*.tar.gz
@@ -25,12 +22,8 @@
 /*/*/target
 /*/*/bin
 /*/*/src/main/resources/db/*
-/*/*/src/main/filters/dev.properties
-/*/*/src/template/project
-/*/*/src/DS_Store
 /*/*/logs/*
 /*/*/db
-/*/*/build*.xml
 /*/*/data
 /*/*/*.war
 /*/*/*.rar
@@ -41,10 +34,8 @@
 /.classpath
 /.project
 /.settings
-/src/template/project
 /src/main/filters/dev.properties
 /src/main/resources/db/*
-/src/template/project
 /src/DS_Store
 /target
 /bin
@@ -53,7 +44,6 @@
 /db
 /data
 /doc
-/build*.xml
 /*.log
 /*.rar
 /*.zip
