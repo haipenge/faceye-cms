@@ -21,41 +21,49 @@
 		</h3>
 	</div>
 	<div class="content">
-	<form:form action="/cms/content/save" method="post" role="form" cssClass="form-horizontal" commandName="content">
-			<form:hidden path="id"/>
-			<form:hidden path="clickCount"/>
+		<form:form action="/cms/content/save" method="post" role="form" cssClass="form-horizontal" commandName="content">
+			<form:hidden path="id" />
+			<form:hidden path="clickCount" />
 			<fieldset>
 				<div class="form-group">
-					<label class="col-md-1 control-label" for="name"> <spring:message code="cms.content.name"/>
+					<label class="col-md-1 control-label" for="name"> <spring:message code="cms.content.name" />
 					</label>
 					<div class="col-md-6">
-					     <form:input path="name" cssClass="form-control"/>
-					   <form:errors path="name" cssClass="error"/>
+						<form:input path="name" cssClass="form-control" />
+						<form:errors path="name" cssClass="error" />
 					</div>
 				</div>
-				
+
 				<div class="form-group">
-					<label class="col-md-1 control-label" for="keywords"> <spring:message code="cms.content.keywords"/>
+					<label class="col-md-1 control-label" for="keywords"> <spring:message code="cms.content.keywords" />
 					</label>
 					<div class="col-md-6">
-					     <form:input path="keywords" cssClass="form-control"/>
-					   <form:errors path="keywords" cssClass="error"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-1 control-label" for="description"> <spring:message code="cms.content.description"/>
-					</label>
-					<div class="col-md-6">
-					     <form:input path="description" cssClass="form-control"/>
-					   <form:errors path="description" cssClass="error"/>
+						<form:input path="keywords" cssClass="form-control" />
+						<form:errors path="keywords" cssClass="error" />
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-md-1 control-label" for="content"> <spring:message code="cms.content.content"/>
+					<label class="col-md-1 control-label" for="category.id"> 分类
+					</label>
+					<div class="col-md-6">
+					<form:select path="category.id" items="${categories}"cssClass="form-control" itemLabel="name" itemValue="id" />
+						<form:errors path="category.id" cssClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label" for="description"> <spring:message code="cms.content.description" />
+					</label>
+					<div class="col-md-6">
+						<form:input path="description" cssClass="form-control" />
+						<form:errors path="description" cssClass="error" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-1 control-label" for="content"> <spring:message code="cms.content.content" />
 					</label>
 					<div class="col-md-8">
-					     <form:textarea path="content" id="editor" style="height: 250px;" placeholder="Enter text ..."/>
-					   <form:errors path="content" cssClass="error"/>
+						<form:textarea path="content" id="editor" style="height: 250px;" placeholder="Enter text ..." />
+						<form:errors path="content" cssClass="error" />
 					</div>
 				</div>
 				<div class="form-group">
@@ -65,7 +73,7 @@
 								<img src="${imageServer}${image.storePath}" alt="..." class="img-thumbnail">
 							</dt>
 							<dd id="${image.id}-dd">
-								<a href="#" onclick="SearchArticle.removeImage(${image.id});return false;"><fmt:message key="global.remove"/></a>
+								<a href="#" onclick="SearchArticle.removeImage(${image.id});return false;"><fmt:message key="global.remove" /></a>
 							</dd>
 						</c:forEach>
 					</dl>

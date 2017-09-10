@@ -9,6 +9,7 @@ import javax.persistence.Id;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -174,6 +175,17 @@ public class Content implements Serializable {
 	public void setImageUrls(List<String> imageUrls) {
 		this.imageUrls = imageUrls;
 	}
+	@DBRef
+	private Category category=null;
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
 
 }
 /**@generate-entity-source@**/

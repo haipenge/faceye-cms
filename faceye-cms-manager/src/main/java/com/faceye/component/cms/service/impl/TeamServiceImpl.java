@@ -35,9 +35,9 @@ public class TeamServiceImpl extends BaseMongoServiceImpl<Team, Long, TeamReposi
 	
 	@Override
 	public Page<Team> getPage(Map<String, Object> searchParams, int page, int size) {
-		if (page != 0) {
-			page = page - 1;
-		}
+//		if (page != 0) {
+//			page = page - 1;
+//		}
 		if(null==searchParams){
 			searchParams=new HashMap();
 		}

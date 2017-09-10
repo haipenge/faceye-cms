@@ -1,4 +1,5 @@
 <%@ include file="/component/core/taglib/taglib.jsp"%>
+<%@ page language="java" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <link rel="stylesheet" type="text/css" href="<c:url value="/css/component/cms/content/content.css"/>" />
 <script type="text/javascript" src="<c:url value="/js/component/cms/content/content.js"/>"></script>
 <div class="page-head">
@@ -48,6 +49,7 @@
 					<tr>
 						<th><input type="checkbox" name="check-all"></th>
 						<th><fmt:message key='cms.content.name'></fmt:message></th>
+						<th>分类</th>
 						<th><fmt:message key='cms.content.clickCount'></fmt:message></th>
 						<th><fmt:message key='cms.content.createDate'></fmt:message></th>
 						<!--@generate-entity-jsp-property-desc@-->
@@ -61,6 +63,7 @@
 						<tr id="${content.id}">
 							<td><input type="checkbox" name="check-single" value="${content.id}"></td>
 							<td>${content.name}</td>
+							<td>${content.category.name }</td>
 							<td>${content.clickCount}</td>
 							<td><fmt:formatDate value="${content.createDate}" pattern="yyyy-MM-dd HH:mm" /></td>
 							<!--@generate-entity-jsp-property-value@-->

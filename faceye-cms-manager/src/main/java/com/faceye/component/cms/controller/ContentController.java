@@ -24,8 +24,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributesModelMap;
 
+import com.faceye.component.cms.entity.Category;
 import com.faceye.component.cms.entity.Content;
 import com.faceye.component.cms.entity.Image;
+import com.faceye.component.cms.service.CategoryService;
 import com.faceye.component.cms.service.ContentService;
 import com.faceye.component.cms.service.ImageService;
 import com.faceye.component.weixin.entity.Account;
@@ -55,6 +57,8 @@ public class ContentController extends BaseController<Content, Long, ContentServ
 	private PropertyService propertyService = null;
 	@Autowired
 	private AccountService accountService = null;
+	@Autowired
+	private CategoryService categorySerivce=null;
 
 	@Autowired
 	public ContentController(ContentService service) {
@@ -302,7 +306,9 @@ public class ContentController extends BaseController<Content, Long, ContentServ
 	 *                     创建日期:2015-7-25 9:40:29<br>
 	 */
 	protected void beforeInput(Model model, HttpServletRequest request) {
-
+		List<Category> categories=this.categorySerivce.getAll();
+		model.addAttribute("categories", categories);
+		
 	}
 
 	/**
@@ -314,6 +320,7 @@ public class ContentController extends BaseController<Content, Long, ContentServ
 	 * @author:haipeng 联系:haipenge@gmail.com 创建日期:2015-7-25 9:40:29
 	 */
 	protected void beforeSave(Content content, HttpServletRequest request) {
+		
 	}
 
 	/**

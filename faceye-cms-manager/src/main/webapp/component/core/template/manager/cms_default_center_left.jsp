@@ -2,6 +2,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <li><a href="#"><i class="fa fa-file"></i><span>内容管理</span></a>
 	<ul class="sub-menu">
+	   <li class="<%=JspUtil.isActive(request, "/cms/category")%>"><a href="<c:url value="/cms/category/home"/>"><fmt:message key="cms.category.manager" /></a></li>
 		<li class="<%=JspUtil.isActive(request, "/cms/content")%>"><a href="<c:url value="/cms/content/home"/>"><fmt:message key="cms.content.manager" /></a></li>
 		<li class="<%=JspUtil.isActive(request, "/cms/workRecord")%>"><a href="<c:url value="/cms/workRecord/home"/>"><fmt:message key="cms.workRecord.manager"></fmt:message></a></li>
 		<li class="<%=JspUtil.isActive(request, "/cms/team")%>"><a href="<c:url value="/cms/team/home"/>"><fmt:message key="cms.team.manager"></fmt:message></a></li>
