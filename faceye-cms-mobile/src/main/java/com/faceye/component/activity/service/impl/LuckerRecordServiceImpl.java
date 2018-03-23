@@ -18,7 +18,7 @@ import com.faceye.component.activity.repository.mongo.LuckerRecordRepository;
 import com.faceye.component.activity.repository.mongo.customer.LuckerRecordCustomerRepository;
 import com.faceye.component.activity.service.LuckerRecordService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 import com.querydsl.core.types.Predicate;
@@ -40,7 +40,7 @@ public class LuckerRecordServiceImpl extends BaseMongoServiceImpl<LuckerRecord, 
 	
 	
 	@Override
-	public Page<LuckerRecord> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<LuckerRecord> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -68,7 +68,7 @@ public class LuckerRecordServiceImpl extends BaseMongoServiceImpl<LuckerRecord, 
 //			res = new PageImpl<LuckerRecord>(items);
 //
 //		}
-		return this.dao.getPage(searchParams, page, size);;
+		return super.getPage(searchParams, page, size);;
 	}
 	
 }/**@generate-service-source@**/

@@ -18,7 +18,7 @@ import com.faceye.component.cms.repository.mongo.CategoryRepository;
 import com.faceye.component.cms.repository.mongo.customer.CategoryCustomerRepository;
 import com.faceye.component.cms.service.CategoryService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 import com.querydsl.core.types.Predicate;
@@ -40,7 +40,7 @@ public class CategoryServiceImpl extends BaseMongoServiceImpl<Category, Long, Ca
 	
 	
 	@Override
-	public Page<Category> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Category> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -68,7 +68,7 @@ public class CategoryServiceImpl extends BaseMongoServiceImpl<Category, Long, Ca
 //			res = new PageImpl<Category>(items);
 //
 //		}
-		return this.dao.getPage(searchParams, page, size);;
+		return super.getPage(searchParams, page, size);;
 	}
 	
 }/**@generate-service-source@**/

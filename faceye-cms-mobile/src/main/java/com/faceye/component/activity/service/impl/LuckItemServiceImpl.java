@@ -18,7 +18,7 @@ import com.faceye.component.activity.repository.mongo.LuckItemRepository;
 import com.faceye.component.activity.repository.mongo.customer.LuckItemCustomerRepository;
 import com.faceye.component.activity.service.LuckItemService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 import com.querydsl.core.types.Predicate;
@@ -40,7 +40,7 @@ public class LuckItemServiceImpl extends BaseMongoServiceImpl<LuckItem, Long, Lu
 	
 	
 	@Override
-	public Page<LuckItem> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<LuckItem> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}
@@ -68,7 +68,7 @@ public class LuckItemServiceImpl extends BaseMongoServiceImpl<LuckItem, Long, Lu
 //			res = new PageImpl<LuckItem>(items);
 //
 //		}
-		return this.dao.getPage(searchParams, page, size);;
+		return super.getPage(searchParams, page, size);;
 	}
 	
 }/**@generate-service-source@**/

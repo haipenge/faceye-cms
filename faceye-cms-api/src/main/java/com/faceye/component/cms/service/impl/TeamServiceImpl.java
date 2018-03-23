@@ -17,7 +17,7 @@ import com.faceye.component.cms.entity.Team;
 import com.faceye.component.cms.repository.mongo.TeamRepository;
 import com.faceye.component.cms.service.TeamService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 /**
@@ -37,7 +37,7 @@ public class TeamServiceImpl extends BaseMongoServiceImpl<Team, Long, TeamReposi
 	
 	
 	@Override
-	public Page<Team> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Team> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

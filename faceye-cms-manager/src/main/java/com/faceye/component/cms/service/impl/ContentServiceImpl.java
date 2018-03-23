@@ -31,7 +31,7 @@ import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.PropertyService;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 import com.faceye.feature.util.JspUtil;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.util.regexp.RegexpUtil;
 import com.querydsl.core.types.Predicate;
 

@@ -62,7 +62,7 @@ public class LuckItemServiceImpl extends BaseMongoServiceImpl<LuckItem, Long, Lu
 			searchParams=new HashMap();
 		}
 		searchParams.put("SORT|orderIndex", "asc");
-		return this.dao.getPage(searchParams, page, size);
+		return super.getPage(searchParams, page, size);
 	}
 	
 }/**@generate-service-source@**/

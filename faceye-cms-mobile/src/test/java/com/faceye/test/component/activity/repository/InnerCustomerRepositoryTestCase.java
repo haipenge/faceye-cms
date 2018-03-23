@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.activity.entity.InnerCustomer;
 import com.faceye.component.activity.repository.mongo.InnerCustomerRepository;
@@ -34,24 +34,24 @@ public class InnerCustomerRepositoryTestCase extends BaseRepositoryTestCase {
 		InnerCustomer entity = new InnerCustomer();
 		this.innerCustomerRepository.save(entity);
 		Iterable<InnerCustomer> entities = this.innerCustomerRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		InnerCustomer entity = new InnerCustomer();
 		this.innerCustomerRepository.save(entity);
-        this.innerCustomerRepository.delete(entity.getId());
+        this.innerCustomerRepository.deleteById(entity.getId());
         Iterable<InnerCustomer> entities = this.innerCustomerRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		InnerCustomer entity = new InnerCustomer();
 		this.innerCustomerRepository.save(entity);
-		InnerCustomer innerCustomer=this.innerCustomerRepository.findOne(entity.getId());
-		Assert.isTrue(innerCustomer!=null);
+		InnerCustomer innerCustomer=this.innerCustomerRepository.findById(entity.getId()).get();
+		Assert.assertTrue(innerCustomer!=null);
 	}
 
 	

@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.cms.entity.WorkRecord;
 import com.faceye.component.cms.repository.mongo.WorkRecordRepository;
@@ -34,24 +34,24 @@ public class WorkRecordRepositoryTestCase extends BaseRepositoryTestCase {
 		WorkRecord entity = new WorkRecord();
 		this.workRecordRepository.save(entity);
 		Iterable<WorkRecord> entities = this.workRecordRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		WorkRecord entity = new WorkRecord();
 		this.workRecordRepository.save(entity);
-        this.workRecordRepository.delete(entity.getId());
+        this.workRecordRepository.deleteById(entity.getId());
         Iterable<WorkRecord> entities = this.workRecordRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		WorkRecord entity = new WorkRecord();
 		this.workRecordRepository.save(entity);
-		WorkRecord workRecord=this.workRecordRepository.findOne(entity.getId());
-		Assert.isTrue(workRecord!=null);
+		WorkRecord workRecord=this.workRecordRepository.findById(entity.getId()).get();
+		Assert.assertTrue(workRecord!=null);
 	}
 
 	

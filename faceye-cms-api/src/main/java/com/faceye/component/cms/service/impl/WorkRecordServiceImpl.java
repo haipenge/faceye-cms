@@ -17,7 +17,7 @@ import com.faceye.component.cms.entity.WorkRecord;
 import com.faceye.component.cms.repository.mongo.WorkRecordRepository;
 import com.faceye.component.cms.service.WorkRecordService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 /**
@@ -37,7 +37,7 @@ public class WorkRecordServiceImpl extends BaseMongoServiceImpl<WorkRecord, Long
 	
 	
 	@Override
-	public Page<WorkRecord> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<WorkRecord> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

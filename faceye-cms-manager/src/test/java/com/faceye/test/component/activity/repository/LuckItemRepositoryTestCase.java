@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.activity.entity.LuckItem;
 import com.faceye.component.activity.repository.mongo.LuckItemRepository;
@@ -34,24 +34,24 @@ public class LuckItemRepositoryTestCase extends BaseRepositoryTestCase {
 		LuckItem entity = new LuckItem();
 		this.luckItemRepository.save(entity);
 		Iterable<LuckItem> entities = this.luckItemRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		LuckItem entity = new LuckItem();
 		this.luckItemRepository.save(entity);
-        this.luckItemRepository.delete(entity.getId());
+        this.luckItemRepository.deleteById(entity.getId());
         Iterable<LuckItem> entities = this.luckItemRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		LuckItem entity = new LuckItem();
 		this.luckItemRepository.save(entity);
-		LuckItem luckItem=this.luckItemRepository.findOne(entity.getId());
-		Assert.isTrue(luckItem!=null);
+		LuckItem luckItem=this.luckItemRepository.findById(entity.getId()).get();
+		Assert.assertTrue(luckItem!=null);
 	}
 
 	

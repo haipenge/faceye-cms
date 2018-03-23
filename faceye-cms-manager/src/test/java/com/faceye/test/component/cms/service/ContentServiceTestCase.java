@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.cms.entity.Content;
 import com.faceye.component.cms.service.ContentService;
@@ -38,7 +38,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 	 */
 	@Before
 	public void set() throws Exception {
-		Assert.isTrue(contentService != null);
+		Assert.assertTrue(contentService != null);
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 		Content content = new Content();
 		this.contentService.save(content);
 		List<Content> contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(contents));
+		Assert.assertTrue(CollectionUtils.isNotEmpty(contents));
 	}
 
 	@Test
@@ -75,7 +75,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 		Content content = new Content();
 		this.contentService.save(content);
 		List<Content> contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(contents));
+		Assert.assertTrue(CollectionUtils.isNotEmpty(contents));
 	}
 
 	@Test
@@ -85,7 +85,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 			this.contentService.save(content);
 		}
 		List<Content> contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(contents) && contents.size() == 5);
+		Assert.assertTrue(CollectionUtils.isNotEmpty(contents) && contents.size() == 5);
 	}
 
 	@Test
@@ -94,7 +94,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 		this.contentService.save(content);
 		logger.debug(">>Entity id is:" + content.getId());
 		Content e = this.contentService.get(content.getId());
-		Assert.isTrue(e != null);
+		Assert.assertTrue(e != null);
 	}
 
 	@Test
@@ -103,7 +103,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 		this.contentService.save(content);
 		this.contentService.remove(content);
 		List<Content> contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(contents));
+		Assert.assertTrue(CollectionUtils.isEmpty(contents));
 	}
 
 	@Test
@@ -113,10 +113,10 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 			this.contentService.save(content);
 		}
 		List<Content> contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(contents) && contents.size() == 5);
+		Assert.assertTrue(CollectionUtils.isNotEmpty(contents) && contents.size() == 5);
 		this.contentService.removeAllInBatch();
 		contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(contents));
+		Assert.assertTrue(CollectionUtils.isEmpty(contents));
 	}
 
 	@Test
@@ -127,7 +127,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 		}
 		this.contentService.removeAll();
 		List<Content> contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(contents));
+		Assert.assertTrue(CollectionUtils.isEmpty(contents));
 	}
 
 	@Test
@@ -141,7 +141,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 		}
 		this.contentService.removeInBatch(contents);
 		contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isEmpty(contents));
+		Assert.assertTrue(CollectionUtils.isEmpty(contents));
 	}
 
 	@Test
@@ -151,7 +151,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 			this.contentService.save(content);
 		}
 		List<Content> contents = this.contentService.getAll();
-		Assert.isTrue(CollectionUtils.isNotEmpty(contents) && contents.size() == 5);
+		Assert.assertTrue(CollectionUtils.isNotEmpty(contents) && contents.size() == 5);
 	}
 
 	@Test
@@ -162,14 +162,14 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 		}
 		Map<String, Object> searchParams = new HashMap<String, Object>();
 		Page<Content> page = this.contentService.getPage(searchParams, 1, 5);
-		Assert.isTrue(page != null && page.getSize() == 5);
+		Assert.assertTrue(page != null && page.getSize() == 5);
 		searchParams.put("EQ_name", "test-10");
 		page = this.contentService.getPage(searchParams, 1, 5);
-		Assert.isTrue(page != null && page.getTotalElements() == 1);
+		Assert.assertTrue(page != null && page.getTotalElements() == 1);
 		searchParams = new HashMap<String, Object>();
 		searchParams.put("LIKE_name", "test");
 		page = this.contentService.getPage(searchParams, 1, 5);
-		Assert.isTrue(page != null && page.getTotalElements() == 25 && page.getNumberOfElements() == 5);
+		Assert.assertTrue(page != null && page.getTotalElements() == 25 && page.getNumberOfElements() == 5);
 	}
 
 	@Test
@@ -181,7 +181,7 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 			id = content.getId();
 		}
 		Content e = this.contentService.get(id);
-		Assert.isTrue(e != null);
+		Assert.assertTrue(e != null);
 	}
 
 	@Test
@@ -195,6 +195,6 @@ public class ContentServiceTestCase extends BaseServiceTestCase {
 			}
 		}
 		List<Content> contents = this.contentService.getAll(ids);
-		Assert.isTrue(contents != null && contents.size() == 5);
+		Assert.assertTrue(contents != null && contents.size() == 5);
 	}
 }

@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.activity.entity.LuckerRecord;
 import com.faceye.component.activity.repository.mongo.LuckerRecordRepository;
@@ -34,24 +34,24 @@ public class LuckerRecordRepositoryTestCase extends BaseRepositoryTestCase {
 		LuckerRecord entity = new LuckerRecord();
 		this.luckerRecordRepository.save(entity);
 		Iterable<LuckerRecord> entities = this.luckerRecordRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		LuckerRecord entity = new LuckerRecord();
 		this.luckerRecordRepository.save(entity);
-        this.luckerRecordRepository.delete(entity.getId());
+        this.luckerRecordRepository.deleteById(entity.getId());
         Iterable<LuckerRecord> entities = this.luckerRecordRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		LuckerRecord entity = new LuckerRecord();
 		this.luckerRecordRepository.save(entity);
-		LuckerRecord luckerRecord=this.luckerRecordRepository.findOne(entity.getId());
-		Assert.isTrue(luckerRecord!=null);
+		LuckerRecord luckerRecord=this.luckerRecordRepository.findById(entity.getId()).get();
+		Assert.assertTrue(luckerRecord!=null);
 	}
 
 	

@@ -17,7 +17,7 @@ import com.faceye.component.cms.entity.Project;
 import com.faceye.component.cms.repository.mongo.ProjectRepository;
 import com.faceye.component.cms.service.ProjectService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 /**
@@ -37,7 +37,7 @@ public class ProjectServiceImpl extends BaseMongoServiceImpl<Project, Long, Proj
 	
 	
 	@Override
-	public Page<Project> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Project> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

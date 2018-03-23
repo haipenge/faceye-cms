@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.cms.entity.PersonLabel;
 import com.faceye.component.cms.repository.mongo.PersonLabelRepository;
@@ -34,24 +34,24 @@ public class PersonLabelRepositoryTestCase extends BaseRepositoryTestCase {
 		PersonLabel entity = new PersonLabel();
 		this.personLabelRepository.save(entity);
 		Iterable<PersonLabel> entities = this.personLabelRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		PersonLabel entity = new PersonLabel();
 		this.personLabelRepository.save(entity);
-        this.personLabelRepository.delete(entity.getId());
+        this.personLabelRepository.deleteById(entity.getId());
         Iterable<PersonLabel> entities = this.personLabelRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		PersonLabel entity = new PersonLabel();
 		this.personLabelRepository.save(entity);
-		PersonLabel personLabel=this.personLabelRepository.findOne(entity.getId());
-		Assert.isTrue(personLabel!=null);
+		PersonLabel personLabel=this.personLabelRepository.findById(entity.getId()).get();
+		Assert.assertTrue(personLabel!=null);
 	}
 
 	

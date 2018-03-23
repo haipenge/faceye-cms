@@ -21,7 +21,7 @@ import com.faceye.component.security.entity.User;
 import com.faceye.component.security.service.UserService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 @Service("cms-projectServiceImpl")
 public class ProjectServiceImpl extends BaseMongoServiceImpl<Project, Long, ProjectRepository> implements ProjectService {

@@ -12,7 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
-import com.faceye.feature.util.ServiceException;
+ 
 
 import com.faceye.component.cms.entity.Content;
 import com.faceye.component.cms.repository.mongo.ContentRepository;
@@ -43,7 +43,7 @@ public class ContentServiceImpl extends BaseMongoServiceImpl<Content, Long, Cont
      * 创建日期:2015-7-25 9:40:29<br>
 	*/
 	@Override
-	public Page<Content> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Content> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

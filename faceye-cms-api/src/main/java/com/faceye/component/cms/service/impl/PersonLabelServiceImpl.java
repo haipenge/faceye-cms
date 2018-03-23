@@ -17,7 +17,7 @@ import com.faceye.component.cms.entity.PersonLabel;
 import com.faceye.component.cms.repository.mongo.PersonLabelRepository;
 import com.faceye.component.cms.service.PersonLabelService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 /**
@@ -37,7 +37,7 @@ public class PersonLabelServiceImpl extends BaseMongoServiceImpl<PersonLabel, Lo
 	
 	
 	@Override
-	public Page<PersonLabel> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<PersonLabel> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

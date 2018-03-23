@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.cms.entity.Content;
 import com.faceye.component.cms.repository.mongo.ContentRepository;
@@ -34,24 +34,24 @@ public class ContentRepositoryTestCase extends BaseRepositoryTestCase {
 		Content content = new Content();
 		this.contentRepository.save(content);
 		Iterable<Content> contents = this.contentRepository.findAll();
-		Assert.isTrue(contents.iterator().hasNext());
+		Assert.assertTrue(contents.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Content content = new Content();
 		this.contentRepository.save(content);
-        this.contentRepository.delete(content.getId());
+        this.contentRepository.deleteById(content.getId());
         Iterable<Content> contents = this.contentRepository.findAll();
-		Assert.isTrue(!contents.iterator().hasNext());
+		Assert.assertTrue(!contents.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Content content = new Content();
 		this.contentRepository.save(content);
-		content=this.contentRepository.findOne(content.getId());
-		Assert.isTrue(content!=null);
+		content=this.contentRepository.findById(content.getId());
+		Assert.assertTrue(content!=null);
 	}
 
 	

@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.cms.entity.Team;
 import com.faceye.component.cms.repository.mongo.TeamRepository;
@@ -34,24 +34,24 @@ public class TeamRepositoryTestCase extends BaseRepositoryTestCase {
 		Team entity = new Team();
 		this.teamRepository.save(entity);
 		Iterable<Team> entities = this.teamRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Team entity = new Team();
 		this.teamRepository.save(entity);
-        this.teamRepository.delete(entity.getId());
+        this.teamRepository.deleteById(entity.getId());
         Iterable<Team> entities = this.teamRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Team entity = new Team();
 		this.teamRepository.save(entity);
-		Team team=this.teamRepository.findOne(entity.getId());
-		Assert.isTrue(team!=null);
+		Team team=this.teamRepository.findById(entity.getId()).get();
+		Assert.assertTrue(team!=null);
 	}
 
 	

@@ -4,7 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.Assert;
+import org.junit.Assert;
 
 import com.faceye.component.cms.entity.Smtp;
 import com.faceye.component.cms.repository.mongo.SmtpRepository;
@@ -34,24 +34,24 @@ public class SmtpRepositoryTestCase extends BaseRepositoryTestCase {
 		Smtp entity = new Smtp();
 		this.smtpRepository.save(entity);
 		Iterable<Smtp> entities = this.smtpRepository.findAll();
-		Assert.isTrue(entities.iterator().hasNext());
+		Assert.assertTrue(entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testDelete() throws Exception {
 		Smtp entity = new Smtp();
 		this.smtpRepository.save(entity);
-        this.smtpRepository.delete(entity.getId());
+        this.smtpRepository.deleteById(entity.getId());
         Iterable<Smtp> entities = this.smtpRepository.findAll();
-		Assert.isTrue(!entities.iterator().hasNext());
+		Assert.assertTrue(!entities.iterator().hasNext());
 	}
 
 	@Test
 	public void testFindOne() throws Exception {
 		Smtp entity = new Smtp();
 		this.smtpRepository.save(entity);
-		Smtp smtp=this.smtpRepository.findOne(entity.getId());
-		Assert.isTrue(smtp!=null);
+		Smtp smtp=this.smtpRepository.findById(entity.getId()).get();
+		Assert.assertTrue(smtp!=null);
 	}
 
 	

@@ -17,7 +17,7 @@ import com.faceye.component.cms.entity.Smtp;
 import com.faceye.component.cms.repository.mongo.SmtpRepository;
 import com.faceye.component.cms.service.SmtpService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 /**
@@ -37,7 +37,7 @@ public class SmtpServiceImpl extends BaseMongoServiceImpl<Smtp, Long, SmtpReposi
 	
 	
 	@Override
-	public Page<Smtp> getPage(Map<String, Object> searchParams, int page, int size) throws ServiceException {
+	public Page<Smtp> getPage(Map<String, Object> searchParams, int page, int size)   {
 		if (page != 0) {
 			page = page - 1;
 		}

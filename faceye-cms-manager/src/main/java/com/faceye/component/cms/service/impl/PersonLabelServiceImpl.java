@@ -17,7 +17,7 @@ import com.faceye.component.cms.repository.mongo.PersonLabelRepository;
 import com.faceye.component.cms.service.PersonLabelService;
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
-import com.faceye.feature.util.ServiceException;
+ 
 import com.querydsl.core.types.Predicate;
 @Service
 public class PersonLabelServiceImpl extends BaseMongoServiceImpl<PersonLabel, Long, PersonLabelRepository> implements PersonLabelService {

@@ -18,7 +18,7 @@ import com.faceye.component.activity.repository.mongo.CustomerRepository;
 import com.faceye.component.activity.repository.mongo.customer.CustomerCustomerRepository;
 import com.faceye.component.activity.service.CustomerService;
 
-import com.faceye.feature.util.ServiceException;
+ 
 import com.faceye.feature.repository.mongo.DynamicSpecifications;
 import com.faceye.feature.service.impl.BaseMongoServiceImpl;
 import com.querydsl.core.types.Predicate;
@@ -68,7 +68,7 @@ public class CustomerServiceImpl extends BaseMongoServiceImpl<Customer, Long, Cu
 //			res = new PageImpl<Customer>(items);
 //
 //		}
-		return this.dao.getPage(searchParams, page, size);
+		return super.getPage(searchParams, page, size);
 	}
 
 
